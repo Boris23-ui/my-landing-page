@@ -1,15 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Mulish } from "next/font/google";
 import "./globals.css";
+import cn from 'classnames';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const mulish = Mulish({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn('min-h-screen font-sans antialiased', mulish.className)}
       >
         {children}
       </body>
